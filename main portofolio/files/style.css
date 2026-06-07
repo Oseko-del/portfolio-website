@@ -81,7 +81,6 @@ nav {
   position: relative;
   opacity: 0;
   transform: translateY(30px);
-  margin-top: -100px;
   animation: fadeUp 0.8s ease forwards, floatCard 4s ease-in-out 0.8s infinite;
 }
 @keyframes fadeUp {
@@ -465,8 +464,8 @@ section { padding: 6rem 4rem; }
 .btn-submit:active { transform: translateY(0); }
 .form-success {
   display: none;
-  background: rgba(10, 225, 10, 0.44);
-  border: 1px solid rgba(122, 67, 3, 0.712);
+  background: rgba(170,255,0,0.08);
+  border: 1px solid rgba(170,255,0,0.3);
   border-radius: 10px;
   padding: 1rem;
   color: var(--green);

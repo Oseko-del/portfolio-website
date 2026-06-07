@@ -28,9 +28,7 @@ form.addEventListener('submit', async (e) => {
     });
     if (res.ok) {
       form.reset();
-      const msg = document.getElementById('formSuccess');
-msg.style.display = 'block';
-setTimeout(() => { msg.style.display = 'none'; }, 4000);
+      document.getElementById('formSuccess').style.display = 'block';
       btn.textContent = 'Sent!';
     } else {
       btn.textContent = 'Error. Try again.';
