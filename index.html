@@ -17,8 +17,9 @@
     <li><a href="#home">Home</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#tools">Tools</a></li>
-    <li><a href="#thoughts">Thoughts</a></li>
+    <li><a href="#thoughts">Articles</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="hamburger" onclick="openMenu()"><i class="fas fa-bars"></i></div>
@@ -30,8 +31,9 @@
   <a href="#home" onclick="closeMenu()">Home</a>
   <a href="#projects" onclick="closeMenu()">Projects</a>
   <a href="#experience" onclick="closeMenu()">Experience</a>
+   <a href="#certifications" onclick="closeMenu()">Certifications</a>
   <a href="#tools" onclick="closeMenu()">Tools</a>
-  <a href="#thoughts" onclick="closeMenu()">Thoughts</a>
+  <a href="#thoughts" onclick="closeMenu()">Articles</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
@@ -88,8 +90,26 @@
         <div class="label">Worldwide<br>Clients</div>
       </div>
     </div>
+    <!-- ADDING MY CV -->
+<a href="Sydney-oseko-Cv-Resume main.pdf" download style="
+  display: inline-block;
+  margin-top: 2rem;
+  background: var(--orange);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.3s, transform 0.3s;
+" onmouseover="this.style.background='#d45a25'; this.style.transform='scale(1.05)';"
+   onmouseout="this.style.background='#FF6B35'; this.style.transform='scale(1)';">
+  ↓ Download CV
+</a>
   </div>
 </section>
+
 
 <!-- PROJECTS -->
 <section id="projects">
@@ -353,7 +373,7 @@
 <section id="thoughts">
   <div class="reveal">
     <p class="section-label">Blog</p>
-    <div class="section-title">DESIGN<br><span class="dim">THOUGHTS</span></div>
+    <div class="section-title">Articles<br><span class="dim">THOUGHTS</span></div>
   </div>
   <div class="thoughts-grid reveal">
     <a href="blog-video-editing.html" style="text-decoration:none; color:inherit;">
@@ -386,6 +406,7 @@
     </a>
   </div>
 </section>
+
 
 <!-- CONTACT -->
 <section id="contact">
@@ -460,5 +481,29 @@
 </footer>
 
 <script src="script.js"></script>
+<!-- BACK TO TOP -->
+<button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--orange);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0.5;
+  transition: transform 0.2s, opacity 0.2s;
+" onmouseover="this.style.opacity='1'"
+   onmouseout="this.style.opacity='0.5'">
+  ↑
+</button>
 </body>
 </html>

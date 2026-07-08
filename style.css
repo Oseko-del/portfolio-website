@@ -81,7 +81,7 @@ nav {
   position: relative;
   opacity: 0;
   transform: translateY(30px);
-  margin-top: -50px;
+  margin-top: -220px;
   animation: fadeUp 0.8s ease forwards, floatCard 4s ease-in-out 0.8s infinite;
 }
 @keyframes fadeUp {
@@ -513,14 +513,40 @@ footer .foot-socials a:hover { color: var(--orange); }
 .mobile-menu {
   display: none;
   position: fixed;
-  inset: 0;
-  background: rgba(10,10,10,0.98);
+  top: 60px;
+  right: 0;
+  left: auto;
+  width: 200px;
+  background: rgba(17,17,17,0.85);
+  backdrop-filter: blur(10px);
   z-index: 99;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  border-radius: 0 0 0 16px;
+  border-left: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0.3rem 0;
 }
+.mobile-menu a {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0
+  color: var(--gray);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  padding: 0.5rem 1rem;
+  width: 50%;
+  transition: color 0.2s, background 0.2s;
+}
+.mobile-menu a:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.05);
+}
+.mobile-close { display: none; }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
   font-family: 'Bebas Neue', sans-serif;
@@ -541,11 +567,23 @@ footer .foot-socials a:hover { color: var(--orange); }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+  .exp-item {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.exp-date {
+  margin-left: 0;
+}
+
+.exp-content p {
+  font-size: 0.82rem;
+}
   nav { padding: 1rem 2rem; }
   .nav-links { display: none; }
   .hamburger { display: block; }
   #home { flex-direction: column; padding: 7rem 2rem 4rem; text-align: center; }
-  .hero-card { width: 240px; }
+  .hero-card { width: 240px; margin-top: 0; }
   .hero-stats { justify-content: center; }
   section { padding: 4rem 2rem; }
   .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
@@ -571,3 +609,4 @@ a:visited .thought-card {
 }
 
 .thoughts-grid a { outline: none; }
+
