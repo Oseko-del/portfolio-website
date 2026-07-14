@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sydney Oseko Juma | IT Student & Web Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">Sydney Oseko</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#thoughts">Thoughts</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMenu()"><i class="fas fa-bars"></i></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" onclick="closeMenu()"><i class="fas fa-times"></i></span>
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#tools" onclick="closeMenu()">Tools</a>
+  <a href="#thoughts" onclick="closeMenu()">Thoughts</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-card">
+    <div class="card-photo">
+      <!-- Put your photo in the same folder and rename it: your-photo.jpg -->
+      <img src="sydney main.png" alt="Sydney Oseko Juma"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="card-photo-placeholder" style="display:none;">
+        <i class="fas fa-user"></i>
+      </div>
+    </div>
+    <div class="card-info">
+      <h3>Sydney Oseko Juma</h3>
+      <p>IT Student & Web Developer building innovative solutions.</p>
+      <div class="card-socials">
+        <a href="https://github.com/Oseko-del" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://x.com/Oseko_17" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/oseko_17?igsh=eHN3bjQ2MDZmbGsz" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@yourusername" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="card-contact">
+        <a href="tel:+254796096169">0796096169</a>
+        <a href="mailto:osekosydney@gmail.com">osekosydney@gmail.com</a>
+      </div>
+      <div class="flame-badge"><i class="fas fa-fire"></i></div>
+    </div>
+  </div>
+
+  <div class="hero-text">
+    <div class="hero-title">
+      IT Student |<br>
+      Web<br>
+      Developer <span class="dim">&</span><br>
+      <span class="dim">Systems</span><br>
+      <span class="dim">Enthusiast</span>
+    </div>
+    <p class="hero-subtitle">
+      Tech enthusiast passionate in programming, web development, 3D art and AI, driven by innovation and continuous learning.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="num"><span>+</span>2</div>
+        <div class="label">Years of<br>Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="num"><span>+</span>3</div>
+        <div class="label">Projects<br>Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="num"><span>+</span>2</div>
+        <div class="label">Worldwide<br>Clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="reveal">
+    <p class="section-label">Portfolio</p>
+    <div class="section-title">RECENT<br><span class="dim">PROJECTS</span></div>
+  </div>
+  <div class="projects-grid reveal">
+    <div class="project-card">
+      <div class="project-thumb">
+        <div class="project-thumb-inner orange">
+          <img src="ndovu.png" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <span class="tag">Python · SQLite</span>
+      </div>
+      <div class="project-info"
+        <h3>Ndovu POS</h3>
+        <p>Ndovu POS System is a modern Point of Sale solution designed to help businesses efficiently manage sales, inventory, and customer transactions. </p>
+        <div class="project-links">
+          <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+          <a href="#">Demo Video</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb">
+        <div class="project-thumb-inner green">
+          <img src="Screenshot 2026-06-04 195622.png" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <span class="tag">Flask · HTML/CSS</span>
+      </div>
+      <div class="project-info">
+        <h3>Alpha E-commerce website</h3>
+        <p>Built a full e-commerce web platform  , featuring product listings, a shopping cart, user authentication, and order management designed to simulate a real online shopping experience..</p>
+        <div class="project-links">
+          <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+          <a href="#">Still in production</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb">
+        <div class="project-thumb-inner blue">
+          <img src="Brand_n8n_v2-1.png" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <span class="tag">Python · n8n</span>
+      </div>
+      <div class="project-info">
+        <h3>Self-Hosted AI Agent</h3>
+        <p>Building a self-hosted AI agent pipeline using open-source LLMs, automating tasks locally without relying on cloud APIs.</p>
+        <div class="project-links">
+          <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="reveal">
+    <p class="section-label">Background</p>
+    <div class="exp-big">
+      2 YEARS<br>
+      <span class="dim">OF</span><br>
+      <span class="dim">EXPERIENCE</span>
+    </div>
+  </div>
+  <div class="exp-list reveal">
+    <div class="exp-item">
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <h3>IT Student — BSc Information Technology</h3>
+        <div class="company">Technical University of Mombasa (TUM)</div>
+        <p> IT student with strong foundations in software development and hardware systems, passionate about building practical solutions through code and technology</p>
+      </div>
+      <div class="exp-date">2023 — Present</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <h3>Amref Health Africa Mombasa</h3>
+        <div class="company">NGO</div>
+        <p>Managed IT systems, ensuring high availability and reliability of digital platforms. Spearheaded the adoption of an ERP system for better resource management.</p>
+      </div>
+      <div class="exp-date">August 2024 – September 2024</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <h3> Video Editor</h3>
+        <div class="company">Independent</div>
+        <p>Experienced in video editing for events and corporate productions, creating high-quality content using Adobe Premiere Pro and After Effects.</p>
+      </div>
+      <div class="exp-date">2023 — Present</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="reveal">
+   
+    <div class="section-title">PREMIUM<br><span class="dim">TOOLS</span></div>
+  </div>
+  <div class="tools-grid reveal">
+    
+    <div class="tool-card green">
+      <span class="tool-icon">
+        <img src="Brand_n8n_v2-1.png" style="width:50%; height:500%; object-fit:contain;">
+      </span>
+      <h4>n8n</h4>
+      <p>Building automated workflows for task automation and system integration.</p>
+    </div>
+
+    <div class="tool-card green">
+      <span class="tool-icon">
+        <img src="Ollama-Logo-Image.jpg" style="width:50%; height:500%; object-fit:contain;">
+      </span>
+      <h4>Ollama</h4>
+      <p>Building a self-hosted AI agent pipeline using open-source LLMs, automating tasks locally without relying on cloud APIs..</p>
+    </div>
+    
+    <div class="tool-card green">
+      <span class="tool-icon">🎨</span>
+      <h4>Figma & Framer</h4>
+      <p>UI/UX design and prototyping for modern web experiences.</p>
+    </div>
+    <div class="tool-card orange">
+      <span class="tool-icon">
+        <img src="adobe-after-effect-logo-icon-free-vector.jpg" style="width:50%; height:50%; object-fit:contain;">
+      </span>
+      <h4>After Effects</h4>
+      <p>Creating motion graphics, animations, and visual effects for video projects.</p>
+    </div>
+    <div class="tool-card green">
+      <span class="tool-icon">
+        <img src="adobe-premier-pro-logo-icon-free-vector.jpg" style="width:50%; height:50%; object-fit:contain;">
+      </span>
+      <h4>Premiere Pro</h4>
+      <p>Professional video editing including cutting, color grading, and audio enhancement.</p>
+    </div>
+    <div class="tool-card orange">
+      <span class="tool-icon">
+        <img src="linux.png" style="width:50%; height:50%; object-fit:contain;">
+      </span>
+      <h4>Linux</h4>
+      <p>Comfortable working in Linux environments for development and automation.</p>
+    </div>
+    <div class="tool-card green">
+      <span class="tool-icon">
+        <img src="docker.jpg" style="width:50%; height:50%; object-fit:contain;">
+      </span>
+      <h4>Docker</h4>
+      <p>Containerizing applications for consistent development and deployment.</p>
+    </div>
+    <div class="tool-card orange">
+      <span class="tool-icon">
+        <img src="images.jpg" style="width:50%; height:50%; object-fit:contain;">
+      </span>
+      <h4>eNSP Networking</h4>
+      <p>Solid understanding of network models, routing, switching, and device configuration.</p>
+    </div>
+  </div>
+</section>
+
+
+<!--  tech stack -->
+<section id="tools">
+  <div class="reveal">
+    <p class="section-label">PREMIUM</p>
+    <div class="section-title">TECH<br><span class="dim">stack</span></div>
+  </div>
+  <div class="tools-grid reveal">
+    <div class="tool-card orange">
+      <span class="tool-icon">
+        <img src="download.png" style="width:50%; height:50%; object-fit:contain;">
+      </span>
+      <h4>Python</h4>
+      <p>Proficient in Python for scripting, automation, and data manipulation.</p>
+    </div>
+    <div class="tool-card green">
+      <span class="tool-icon">
+        <img src="c sharp.png" style="width:50%; height:500%; object-fit:contain;">
+      </span>
+      <h4>C#</h4>
+      <p>Proficient in C# for building Windows desktop applications and object-oriented programming solutions.</p>
+    </div>
+    <div class="tool-card orange">
+      <span class="tool-icon">🌐</span>
+      <h4>HTML/CSS/JS</h4>
+      <p>Building responsive, interactive web interfaces from scratch.</p>
+    </div>
+    <div class="tool-card green">
+      <span class="tool-icon">
+        <img src="images (1).png" style="width:50%; height:500%; object-fit:contain;">
+      </span>
+      <h4>PostgreSQL</h4>
+      <p> PostgreSQL for designing and managing relational databases, writing  queries, and handling data efficiently.</p>
+    </div>
+    <div class="tool-card orange">
+      <span class="tool-icon">
+        <img src="javascript.png" style="width:50%; height:50%; object-fit:contain;">
+      </span>
+      <h4>JavaScript</h4>
+      <p>Creating dynamic and interactive web applications using JavaScript frameworks.</p>
+    </div>
+   
+    
+    <div class="tool-card green">
+      <span class="tool-icon">
+        <img src="mongo icon.png" style="width:50%; height:50%; object-fit:contain;">
+      </span>
+      <h4>MongoDB</h4>  
+      <p>Proficient in MongoDB for NoSQL database management, data modeling, and performance optimization.</p>
+    </div>
+   
+  </div>
+</section>
+
+<!-- THOUGHTS -->
+
+<section id="thoughts">
+  <div class="reveal">
+    <p class="section-label">Blog</p>
+    <div class="section-title">DESIGN<br><span class="dim">THOUGHTS</span></div>
+  </div>
+  <div class="thoughts-grid reveal">
+    <a href="blog-video-editing.html" style="text-decoration:none; color:inherit;">
+      <div class="thought-card">
+        <span class="thought-tag">Video Editing</span>
+        <h3>My Journey into Video Editing & Motion Graphics</h3>
+        <p>How I use Adobe Premiere Pro and After Effects to create engaging content for social media and client projects.</p>
+      </div>
+    </a>
+
+    <a href="blog-chatbot.html" style="text-decoration:none; color:inherit;">
+      <div class="thought-card">
+        <span class="thought-tag">Automation</span>
+        <h3>Building and Streamlining a Chatbot Website</h3>
+        <p>Integrating the Gemini API into a pharmacy website to create an AI-powered prescription helper chatbot.</p>
+      </div>
+    </a>
+
+    <a href="blog-landing-page.html" style="text-decoration:none; color:inherit;">
+      <div class="thought-card">
+        <span class="thought-tag">AI / Dev</span>
+        <h3>Creating a Landing Page that Performs Better</h3>
+        <p>How performance, design, and clear calls-to-action combine to convert visitors into clients.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="contact-info reveal">
+      <p class="section-label">Get in Touch</p>
+      <h2>LET'S WORK<br>TOGETHER</h2>
+      <p>Have a project in mind or want to collaborate? Feel free to reach out  I'm always open to new opportunities.</p>
+      <div class="contact-detail">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+254796096169">+254796096169</a>
+      </div>
+      <div class="contact-detail">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:osekosydney@gmail.com">osekosydney@gmail.com</a>
+      </div>
+      <div class="contact-detail">
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/Oseko-del" target="_blank">github.com/Oseko-del</a>
+      </div>
+      <div class="contact-detail">
+        <i class="fab fa-x-twitter"></i>
+        <a href="https://x.com/Oseko_17" target="_blank">@Oseko_17</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <!-- Replace YOUR_FORM_ID with your actual Formspree form ID -->
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/meewenva" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Budget</label>
+          <select name="budget">
+            <option value="">Select...</option>
+            <option>Under $500</option>
+            <option>$500 - $1,000</option>
+            <option>$1,000 - $5,000</option>
+            <option>$5,000+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+        <div class="form-success" id="formSuccess">
+          ✅ Message sent! I'll get back to you soon.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Sydney Oseko juma</div>
+  <p>© 2026 Sydney Oseko . All rights reserved.</p>
+  <div class="foot-socials">
+    <a href="https://github.com/Oseko-del" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://x.com/Oseko_17" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.instagram.com/oseko_17?igsh=eHN3bjQ2MDZmbGsz" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@yourusername" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
