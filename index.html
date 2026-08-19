@@ -11,6 +11,13 @@
   gtag('config', 'G-B8QDLP6CZQ');
 </script>
 <meta charset="UTF-8">
+<script>
+  // Apply saved theme before first paint to avoid a flash of the wrong theme
+  (function() {
+    var saved = localStorage.getItem('theme');
+    if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sydney Oseko Juma | IT Student & Web Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -31,6 +38,9 @@
     <li><a href="#thoughts">Articles</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
   <div class="hamburger" onclick="openMenu()"><i class="fas fa-bars"></i></div>
 </nav>
 
@@ -73,6 +83,15 @@
       <div class="flame-badge"><i class="fas fa-fire"></i></div>
     </div>
   </div>
+
+  <!-- Syd-Bot docked box: sits in the hero's empty right space -->
+  <button class="syd-bot-dock" id="sydBotDock" onclick="sydBotToggle()">
+    <i class="fas fa-robot"></i>
+    <span>
+      <strong>Sydney's Bot</strong>
+      <small>Ask me about Sydney</small>
+    </span>
+  </button>
 
   <div class="hero-text">
     <div class="hero-title">
@@ -490,6 +509,28 @@
 </footer>
 
 <script src="script.js"></script>
+
+<!-- SYD-BOT: chat widget that only knows about Sydney -->
+<div class="syd-bot" id="sydBot">
+  <div class="syd-bot-panel" id="sydBotPanel">
+    <div class="syd-bot-header">
+      <span><i class="fas fa-robot"></i> Sydney's Bot</span>
+      <button class="syd-bot-close" onclick="sydBotToggle()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="syd-bot-log" id="sydBotLog"></div>
+    <div class="syd-bot-input-row">
+      <input type="text" id="sydBotInput" placeholder="Ask about Sydney..." autocomplete="off">
+      <button onclick="sydBotSend()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- Closed state after scrolling: small pill -->
+  <button class="syd-bot-pill" id="sydBotPill" onclick="sydBotToggle()">
+    <i class="fas fa-robot"></i> Chat with me
+  </button>
+</div>
+<script src="bot.js"></script>
+
 <!-- BACK TO TOP -->
 <button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="
   position: fixed;
