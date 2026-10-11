@@ -94,6 +94,30 @@
     </span>
   </button>
 
+  <!-- Desktop-only terminal card (hidden on screens narrower than 1280px) -->
+  <div class="hero-terminal" id="heroTerminal">
+    <div class="term-bar">
+      <span class="term-dots"><span></span><span></span><span></span></span>
+      <span class="term-title">sydney@portfolio: ~</span>
+    </div>
+    <div class="term-body" id="termBody">
+      <div class="t-line"><span class="t-prompt">~/sydney $ </span><span class="t-cmd">whoami</span></div>
+      <div class="t-out"><span class="t-hi">Sydney Oseko</span> — IT student &amp; web developer</div>
+      <div class="t-line"><span class="t-prompt">~/sydney $ </span><span class="t-cmd">currently_building</span></div>
+      <div class="t-out"><span class="t-hi">Kejanii</span> — smart housing platform for Kenya</div>
+      <div class="t-line"><span class="t-prompt">~/sydney $ </span><span class="t-cmd">stack</span></div>
+      <div class="t-out">React · Node.js · Python · PostgreSQL · AI agents</div>
+      <div class="t-line"><span class="t-prompt">~/sydney $ </span><span class="t-cmd">education</span></div>
+      <div class="t-out"><span class="t-hi">BSc Information Technology</span> — TUM</div>
+      <div class="t-line"><span class="t-prompt">~/sydney $ </span><span class="t-cmd">also_do</span></div>
+      <div class="t-out">Web development · video editing · motion graphics</div>
+    </div>
+    <div class="term-foot">
+      <span class="term-status"><span class="term-live"></span>Open to internships &amp; freelance</span>
+      <a class="term-link" href="#projects">View projects →</a>
+    </div>
+  </div>
+
   <div class="hero-text">
     <div class="hero-title">
       IT Student |<br>
@@ -589,5 +613,58 @@
    onmouseout="this.style.opacity='0.5'">
   ↑
 </button>
+
+<!-- HERO TERMINAL: typing animation (desktop only; the card is hidden on small screens) -->
+<script>
+(function () {
+  var card = document.getElementById('heroTerminal');
+  var body = document.getElementById('termBody');
+  if (!card || !body) return;
+  if (card.offsetParent === null) return;                        // hidden on small screens, skip
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // keep the finished text
+
+  var lines = [
+    { cmd: 'whoami',             hi: 'Sydney Oseko', rest: ' — IT student & web developer' },
+    { cmd: 'currently_building', hi: 'Kejanii',      rest: ' — smart housing platform for Kenya' },
+    { cmd: 'stack',              hi: '',             rest: 'React · Node.js · Python · PostgreSQL · AI agents' },
+    { cmd: 'education',          hi: 'BSc Information Technology', rest: ' — TUM' },
+    { cmd: 'also_do',            hi: '',             rest: 'Web development · video editing · motion graphics' }
+  ];
+
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+  async function typeInto(el, text, speed) {
+    for (var i = 0; i < text.length; i++) { el.textContent += text.charAt(i); await sleep(speed); }
+  }
+  function makePrompt() {
+    var row = document.createElement('div'); row.className = 't-line';
+    var pr = document.createElement('span'); pr.className = 't-prompt'; pr.textContent = '~/sydney $ ';
+    var cmd = document.createElement('span'); cmd.className = 't-cmd';
+    var cur = document.createElement('span'); cur.className = 't-cursor';
+    row.appendChild(pr); row.appendChild(cmd); row.appendChild(cur);
+    body.appendChild(row);
+    return { cmd: cmd, cur: cur };
+  }
+
+  async function run() {
+    body.innerHTML = '';
+    await sleep(1100);                                           // wait for the card to fade in
+    for (var i = 0; i < lines.length; i++) {
+      var p = makePrompt();
+      await typeInto(p.cmd, lines[i].cmd, 45);
+      await sleep(280);
+      p.cur.remove();
+      var out = document.createElement('div'); out.className = 't-out';
+      var hi = document.createElement('span'); hi.className = 't-hi';
+      var rest = document.createElement('span');
+      out.appendChild(hi); out.appendChild(rest); body.appendChild(out);
+      await typeInto(hi, lines[i].hi, 18);
+      await typeInto(rest, lines[i].rest, 12);
+      await sleep(350);
+    }
+    makePrompt();                                                // final blinking cursor
+  }
+  run();
+})();
+</script>
 </body>
 </html>
