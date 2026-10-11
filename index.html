@@ -33,7 +33,7 @@
     <li><a href="#home">Home</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
     <li><a href="#tools">Tools</a></li>
     <li><a href="#thoughts">Articles</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -50,7 +50,7 @@
   <a href="#home" onclick="closeMenu()">Home</a>
   <a href="#projects" onclick="closeMenu()">Projects</a>
   <a href="#experience" onclick="closeMenu()">Experience</a>
-   <a href="#certifications" onclick="closeMenu()">Certifications</a>
+  <a href="certifications.html">Certifications</a>
   <a href="#tools" onclick="closeMenu()">Tools</a>
   <a href="#thoughts" onclick="closeMenu()">Articles</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
@@ -61,7 +61,7 @@
   <div class="hero-card">
     <div class="card-photo">
       <!-- were i added my photo -->
-      <img src="sydney main.png" alt="Sydney Oseko Juma"
+      <img src="sydney.webp" alt="Sydney Oseko Juma"
         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <div class="card-photo-placeholder" style="display:none;">
         <i class="fas fa-user"></i>
@@ -111,7 +111,7 @@
         <div class="label">Years of<br>Experience</div>
       </div>
       <div class="stat-item">
-        <div class="num"><span>+</span>3</div>
+        <div class="num"><span>+</span>5</div>
         <div class="label">Projects<br>Completed</div>
       </div>
       <div class="stat-item">
@@ -147,6 +147,27 @@
     <div class="section-title">RECENT<br><span class="dim">PROJECTS</span></div>
   </div>
   <div class="projects-grid reveal">
+
+    <!-- NEW: KEJANII -->
+    <div class="project-card">
+      <div class="project-thumb">
+        <div class="project-thumb-inner kejanii">
+          <i class="fas fa-house" style="font-size:3.5rem;"></i>
+        </div>
+        <span class="tag">React · Node.js · PostgreSQL</span>
+      </div>
+      <div class="project-info">
+        <h3>Kejanii Smart Housing Platform</h3>
+        <p>Full-stack housing platform connecting landlords and tenants across Kenya. Property listings, booking requests, M-Pesa and card payments and an admin panel with audit logging.</p>
+        <div class="project-links">
+          <!-- PUT YOUR KEJANII LIVE LINK IN THE href BELOW -->
+          <a href="#" target="_blank" rel="noopener">Live Demo</a>
+          <!-- PUT YOUR KEJANII GITHUB REPO IN THE href BELOW -->
+          <a href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+
     <div class="project-card">
       <div class="project-thumb">
         <div class="project-thumb-inner orange">
@@ -154,7 +175,7 @@
         </div>
         <span class="tag">Python · SQLite</span>
       </div>
-      <div class="project-info"
+      <div class="project-info">
         <h3>Ndovu POS</h3>
         <p>Ndovu POS System is a modern Point of Sale solution designed to help businesses efficiently manage sales, inventory, and customer transactions. </p>
         <div class="project-links">
@@ -301,7 +322,9 @@
     </div>
     
     <div class="tool-card green">
-      <span class="tool-icon">🎨</span>
+      <span class="tool-icon">
+        <i class="fa-brands fa-figma" style="color:#F24E1E; font-size:3rem;"></i>
+      </span>
       <h4>Figma & Framer</h4>
       <p>UI/UX design and prototyping for modern web experiences.</p>
     </div>
@@ -345,7 +368,7 @@
 
 
 <!--  tech stack -->
-<section id="tools">
+<section id="tech-stack">
   <div class="reveal">
     <p class="section-label">PREMIUM</p>
     <div class="section-title">TECH<br><span class="dim">stack</span></div>
@@ -366,7 +389,11 @@
       <p>Proficient in C# for building Windows desktop applications and object-oriented programming solutions.</p>
     </div>
     <div class="tool-card orange">
-      <span class="tool-icon">🌐</span>
+      <span class="tool-icon">
+        <i class="fa-brands fa-html5" style="color:#E34F26; font-size:2.4rem;"></i>
+        <i class="fa-brands fa-css3-alt" style="color:#1572B6; font-size:2.4rem;"></i>
+        <i class="fa-brands fa-js" style="color:#F7DF1E; font-size:2.4rem;"></i>
+      </span>
       <h4>HTML/CSS/JS</h4>
       <p>Building responsive, interactive web interfaces from scratch.</p>
     </div>
