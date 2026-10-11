@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!-- saved from url=(0066)file:///C:/Users/Administrator/Downloads/blog-video-editing_1.html -->
-<html lang="en"><head>
-
+<html lang="en">
+<head>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B8QDLP6CZQ"></script>
 <script>
@@ -11,338 +10,152 @@
 
   gtag('config', 'G-B8QDLP6CZQ');
 </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<meta charset="UTF-8">
+<script>
+  // Apply saved theme before first paint to avoid a flash of the wrong theme
+  (function() {
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    } catch (e) {}
+  })();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Journey into Video Editing — Sydney Oseko</title>
-<link href="./blog-video-editing_files/css2" rel="stylesheet">
-<link rel="stylesheet" href="./blog-video-editing_files/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Same stylesheet as the main site, so fonts, colours, nav and footer match exactly -->
+<link rel="stylesheet" href="style.css">
 <style>
-  
-  :root {
-    --orange: #FF6B35;
-    --green: #AAFF00;
-    --dark: #0a0a0a;
-    --dark2: #111111;
-    --white: #ffffff;
-    --gray: #888888;
-    --card-bg: #141414;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--dark);
-    color: var(--white);
-    font-family: 'Outfit', sans-serif;
-    min-height: 100vh;
-  }
-
-  /* NAV */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 4rem;
-    background: rgba(10,10,10,0.9);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    color: var(--orange);
-    letter-spacing: 2px;
-    text-decoration: none;
-  }
-  .back-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--gray);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-  .back-btn:hover { color: var(--white); }
-  .back-btn i { font-size: 0.85rem; }
-
-  /* LAYOUT */
+  /* ---- Blog layout (everything else comes from style.css) ---- */
   .page-wrap {
     display: grid;
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 280px 1fr;
     gap: 3rem;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 7.5rem 2rem 4rem;
     align-items: start;
   }
 
-  /* SIDEBAR CARD */
+  /* Author card: same look as the hero card on the main page, no floating */
   .author-card {
     position: sticky;
     top: 90px;
+    width: 280px;
     background: var(--white);
-    border-radius: 20px;
+    border-radius: 24px;
     padding: 1rem;
-    text-align: center;
   }
   .author-card::before {
     content: '';
     position: absolute;
-    top: -10px; left: -10px;
-    width: 60px; height: 60px;
+    top: -12px; left: -12px;
+    width: 80px; height: 80px;
     border: 2px dashed var(--orange);
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 0.6;
   }
-  .author-photo {
-    background: var(--orange);
-    border-radius: 14px;
-    height: 180px;
-    overflow: hidden;
-    margin-bottom: 0.8rem;
-  }
-  .author-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
-  .author-photo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    color: rgba(255,255,255,0.4);
-  }
-  .author-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 0.3rem;
-  }
-  .author-card p {
-    font-size: 0.72rem;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 0.8rem;
-  }
-  .author-socials {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    margin-bottom: 0.6rem;
-  }
-  .author-socials a {
-    color: var(--orange);
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: transform 0.2s;
-  }
-  .author-socials a:hover { transform: scale(1.2); }
-  .author-contact {
-    font-size: 0.68rem;
-    color: var(--orange);
-    line-height: 1.8;
-  }
-  .author-contact a {
-    color: var(--orange);
-    text-decoration: none;
-    display: block;
-  }
-  .author-contact a:hover { text-decoration: underline; }
-  .flame-badge {
-    width: 30px; height: 30px;
-    background: var(--orange);
+  .author-card::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; right: -8px;
+    width: 50px; height: 50px;
+    border: 2px dashed var(--orange);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0.5rem auto 0;
-    color: white;
-    font-size: 0.85rem;
+    opacity: 0.4;
   }
 
-  /* BLOG CONTENT */
+  /* Article */
   .blog-content { min-width: 0; }
-  .blog-hero-img {
-    width: 100%;
-    height: 340px;
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-    background: var(--card-bg);
-  }
-  .blog-hero-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .blog-hero-img-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    background: linear-gradient(135deg, #1a1a1a, #222);
-  }
-  .blog-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    font-size: 0.78rem;
-    color: var(--gray);
-  }
-  .blog-tag {
-    display: inline-block;
-    background: rgba(255,107,53,0.12);
-    color: var(--orange);
-    font-size: 0.65rem;
-    padding: 3px 10px;
-    border-radius: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-  }
-  .blog-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    line-height: 1.05;
-    letter-spacing: 1px;
-    margin-bottom: 2rem;
-    color: var(--white);
-  }
-  .blog-divider {
-    height: 1px;
-    background: rgba(255,255,255,0.07);
-    margin-bottom: 2rem;
-  }
-  .blog-body {
-    font-size: 0.95rem;
-    line-height: 1.9;
-    color: rgba(255,255,255,0.8);
-  }
+  .blog-hero-img { width: 100%; height: 340px; border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; background: var(--card-bg); }
+  .blog-hero-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .blog-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 0.78rem; color: var(--gray); }
+  .blog-tag { display: inline-block; background: rgba(255,107,53,0.12); color: var(--orange); font-size: 0.65rem; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.8rem; }
+  .blog-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.05; letter-spacing: 2px; margin-bottom: 2rem; color: var(--white); }
+  .blog-divider { height: 1px; background: var(--border-med); margin-bottom: 2rem; }
+  .blog-body { font-size: 0.95rem; line-height: 1.9; color: color-mix(in srgb, var(--white) 80%, transparent); }
   .blog-body p { margin-bottom: 1.4rem; }
-  .blog-body h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    color: var(--white);
-    margin: 2rem 0 1rem;
-  }
-  .blog-body h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--white);
-    margin: 1.5rem 0 0.8rem;
-  }
+  .blog-body h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1.5px; color: var(--white); margin: 2rem 0 1rem; font-weight: 400; }
+  .blog-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--white); margin: 1.5rem 0 0.8rem; }
   .blog-body strong { color: var(--orange); font-weight: 600; }
-  .blog-body .inline-img {
-    width: 100%;
-    border-radius: 12px;
-    margin: 1.5rem 0;
-    overflow: hidden;
-    background: var(--card-bg);
-    height: 260px;
-  }
-  .blog-body .inline-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .blog-body .inline-img-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    background: linear-height(135deg, #1a1a1a, #222);
-  }
-
-  /* BACK TO BLOG */
-  .back-section {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.07);
-  }
-  .back-section a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--orange);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: gap 0.2s;
-  }
+  .blog-body .inline-img { width: 100%; height: 260px; border-radius: 12px; margin: 1.5rem 0; overflow: hidden; background: var(--card-bg); }
+  .blog-body .inline-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .back-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-soft); }
+  .back-section a { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--orange); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: gap 0.2s; }
   .back-section a:hover { gap: 0.8rem; }
 
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .page-wrap {
-      grid-template-columns: 1fr;
-      padding: 2rem 1.2rem;
-      gap: 2rem;
-    }
-    .author-card { position: static; }
+  @media (max-width: 900px) {
+    .page-wrap { grid-template-columns: 1fr; padding: 6rem 1.2rem 3rem; gap: 2.5rem; }
+    .author-card { position: relative; top: 0; width: 240px; margin: 0 auto; }
     .blog-hero-img { height: 220px; }
+    .blog-body .inline-img { height: 200px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAV (same as the main site) -->
 <nav>
-  <a href="file:///C:/Users/Administrator/Downloads/index.html" class="nav-logo">Sydney Oseko</a>
-  <a href="file:///C:/Users/Administrator/Downloads/index.html#thoughts" class="back-btn">
-    <i class="fas fa-arrow-left"></i> Back to Portfolio
-  </a>
+  <a href="index.html#home" class="nav-logo">Sydney Oseko</a>
+  <ul class="nav-links">
+    <li><a href="index.html#home">Home</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="index.html#tools">Tools</a></li>
+    <li><a href="index.html#thoughts" class="active">Articles</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+  <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
 </nav>
 
-<!-- CONTENT -->
-<div class="page-wrap">
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#home">Home</a>
+  <a href="index.html#projects">Projects</a>
+  <a href="index.html#experience">Experience</a>
+  <a href="certifications.html">Certifications</a>
+  <a href="index.html#tools">Tools</a>
+  <a href="index.html#thoughts">Articles</a>
+  <a href="index.html#contact">Contact</a>
+</div>
 
-  <!-- SIDEBAR -->
+<div class="page-wrap">
+  <!-- AUTHOR CARD (same details as the main page) -->
   <aside class="author-card">
-    <div class="author-photo">
-     <img src="sydney main.png" alt="Sydney Oseko Juma" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="author-photo-placeholder" style="display: flex;">
+    <div class="card-photo">
+      <img src="sydney.webp" alt="Sydney Oseko Juma"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="card-photo-placeholder" style="display:none;">
         <i class="fas fa-user"></i>
       </div>
     </div>
-    <h3>Sydney Oseko Juma</h3>
-    <p>A Software Engineer who has developed countless innovative solutions.</p>
-    <div class="author-socials">
-      <a href="https://github.com/Oseko-del" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://x.com/Oseko_17" target="_blank"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://www.instagram.com/oseko_17?igsh=eHN3bjQ2MDZmbGsz" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com/@yourusername" target="_blank"><i class="fab fa-youtube"></i></a>
+    <div class="card-info">
+      <h3>Sydney Oseko Juma</h3>
+      <p>IT Student & Web Developer building innovative solutions.</p>
+      <div class="card-socials">
+        <a href="https://github.com/Oseko-del" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://x.com/Oseko_17" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/oseko_17?igsh=eHN3bjQ2MDZmbGsz" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/sydney-oseko" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://youtube.com/@yourusername" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="card-contact">
+        <a href="tel:+254796096169">0796096169</a>
+        <a href="mailto:osekosydney@gmail.com">osekosydney@gmail.com</a>
+      </div>
+      <div class="flame-badge"><i class="fas fa-fire"></i></div>
     </div>
-    <div class="author-contact">
-      <a href="tel:+254796096169">0796096169</a>
-      <a href="mailto:osekosydney@gmail.com">osekosydney@gmail.com</a>
-    </div>
-    <div class="flame-badge"><i class="fas fa-fire"></i></div>
   </aside>
 
-  <!-- BLOG POST -->
+  <!-- ARTICLE -->
   <article class="blog-content">
-    <!-- Hero image —  -->
     <div class="blog-hero-img">
-      <img src="file:///C:/Users/Administrator/Downloads/blog-video-editing.jpg" alt="Video Editing" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" style="display: none;">
-      <div class="blog-hero-img-placeholder" style="display: flex;">
-        <img src="pr pro.jpg" style="width:100%; height:100%; object-fit:contain;">
-      </div>
+      <img src="pr%20pro.jpg" alt="Adobe Premiere Pro">
     </div>
 
     <div class="blog-meta">
@@ -365,12 +178,8 @@
         At the beginning, I focused on learning the basics of cutting clips, arranging scenes, and improving audio and visual flow in Premiere Pro. As I grew more confident, I moved into After Effects, where I learned motion graphics, visual effects, and how to create more dynamic and engaging visuals.
       </p>
 
-      <!-- Inline image —  -->
       <div class="inline-img">
-        <img src="file:///C:/Users/Administrator/Downloads/blog-premiere-screen.jpg" alt="Premiere Pro workspace" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" style="display: none;">
-        <div class="inline-img-placeholder" style="display: flex;">
-          <img src="after effect workflow.jpg" alt="">
-        </div>
+        <img src="after%20effect%20workflow.jpg" alt="After Effects workflow">
       </div>
 
       <h2>Growing Confidence</h2>
@@ -393,14 +202,42 @@
     </div>
 
     <div class="back-section">
-      <a href="file:///C:/Users/Administrator/Downloads/index.html#thoughts">
-        <i class="fas fa-arrow-left"></i> Back to Design Thoughts
-      </a>
+      <a href="index.html#thoughts"><i class="fas fa-arrow-left"></i> Back to Design Thoughts</a>
     </div>
   </article>
-
 </div>
 
+<!-- FOOTER (same as the main site) -->
+<footer style="padding-bottom: 2rem;">
+  <div class="logo">Sydney Oseko juma</div>
+  <p>© 2026 Sydney Oseko . All rights reserved.</p>
+  <div class="foot-socials">
+    <a href="https://github.com/Oseko-del" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://x.com/Oseko_17" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://www.linkedin.com/in/sydney-oseko" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/oseko_17?igsh=eHN3bjQ2MDZmbGsz" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@yourusername" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
 
-
-</body></html>
+<script>
+  // Small self-contained script for this page (theme toggle + mobile menu)
+  function syncThemeIcon() {
+    var i = document.querySelector('#themeToggle i');
+    if (!i) return;
+    i.className = document.documentElement.getAttribute('data-theme') === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+  }
+  function toggleTheme() {
+    var root = document.documentElement;
+    var light = root.getAttribute('data-theme') === 'light';
+    if (light) root.removeAttribute('data-theme'); else root.setAttribute('data-theme', 'light');
+    try { localStorage.setItem('theme', light ? 'dark' : 'light'); } catch (e) {}
+    syncThemeIcon();
+  }
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  syncThemeIcon();
+</script>
+</body>
+</html>
