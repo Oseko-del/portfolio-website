@@ -339,7 +339,7 @@ section { padding: 6rem 4rem; scroll-margin-top: 70px; }
 .project-thumb-inner.orange { background: #1c1c1c; }
 .project-thumb-inner.green { background: #003acc; }
 .project-thumb-inner.blue { background: #dc4d0b; }
-.project-thumb-inner.kejanii { background: linear-gradient(135deg, #0f5132, #198754); color: #fff; }
+.project-thumb-inner.kejanii { background: linear-gradient(135deg, #ffffff, #b93d21); color: #b93d21; }
 .project-thumb .tag {
   position: absolute;
   top: 12px; right: 12px;
